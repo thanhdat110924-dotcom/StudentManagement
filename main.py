@@ -9,15 +9,6 @@ else:
 
 from student_service import *
 
-
-# students = [
-#     Student("steve", 26, 10),
-#     Student("jack", 21, 70),
-#     Student("Olivia", 22, 80),
-#     Student("Sophia", 24, 30),
-# ]
-
-
 while True:
     print("=" * 10 + " STUDENT MANAGEMENT " + "=" * 10)
     print("1. Show all students")
@@ -27,7 +18,10 @@ while True:
     print("5. Find student")
     print("6. Top student")
     print("7. Lowest student")
-    print("8. Exit")
+    print("8. Students with courses")
+    print("9. Add course")
+    print("10. Enroll student in course")
+    print("11. Exit")
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -46,6 +40,13 @@ while True:
     elif choice == "7":
         lowest_student()
     elif choice == "8":
+        rows = get_students_with_courses()
+        show_students_with_courses(rows)
+    elif choice == "9":
+        add_course()
+    elif choice == "10":
+        enroll_student()
+    elif choice == "11":
         print("Goodbye!")
         break
     else:
